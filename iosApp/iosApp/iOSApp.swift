@@ -15,7 +15,7 @@ struct iOSApp: App {
     }
     
     func test(){
-        let playerCancel = vm.playerNativeFlow({ data in
+        let playerCancel = vm.flows.nativeFlow({ data in
             print(data)
         }, { err in
             print(err)
