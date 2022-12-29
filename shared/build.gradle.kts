@@ -29,7 +29,9 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidTest by getting
+        val androidTest by getting {
+            dependsOn(commonTest)
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -53,9 +55,9 @@ kotlin {
 
 android {
     namespace = "com.example.kmmtestapplication"
-    compileSdk = 32
+    compileSdk = 33
     defaultConfig {
         minSdk = 29
-        targetSdk = 32
+        targetSdk = 33
     }
 }
