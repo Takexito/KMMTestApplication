@@ -1,4 +1,4 @@
-package com.example.kmmtestapplication
+package com.example.kmmtestapplication.greeting
 
 class Greeting {
     private val platform: Platform = getPlatform()

@@ -11,11 +11,37 @@ struct iOSApp: App {
 	}
     
     init(){
-        test()
+//        testWithWrappers()
+        testNativeFlow()
+//        testComputed()
     }
     
-    func test(){
-        let playerCancel = vm.flows.nativeFlow({ data in
+    
+    func testNativeFlow(){
+        print("=== Output with Native Flow ===")
+        let cancel = vm.playerNativeFlow({ data in
+            print(data)
+        }, { err in
+            print(err)
+        })
+
+    }
+    
+    func testWithWrappers(){
+        print("=== Output with Wrappers ===")
+
+        let playerCancel = vm.playerOptionalFlowAdapter.subscribe(onEach: { data in
+            print(data.get())
+        }, onComplete: {
+            print("Complete")
+        }, onThrow: { err in
+            print(err)
+        })
+    }
+    
+    func testComputed(){
+        let test = TestComputedFlow()
+        let floatState = test.nativeFlow({ data in
             print(data)
         }, { err in
             print(err)

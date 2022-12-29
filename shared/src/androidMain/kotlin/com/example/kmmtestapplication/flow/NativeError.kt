@@ -1,4 +1,6 @@
-package com.example.kmmtestapplication
+package com.example.kmmtestapplication.flow
+
+import com.example.kmmtestapplication.flow.NativeError
 
 /**
  * Represents an error in a way that the specific platform is able to handle

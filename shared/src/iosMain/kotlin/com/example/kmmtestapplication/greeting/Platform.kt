@@ -1,5 +1,7 @@
-package com.example.kmmtestapplication
 
+package com.example.kmmtestapplication.greeting
+
+import com.example.kmmtestapplication.greeting.Platform
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {

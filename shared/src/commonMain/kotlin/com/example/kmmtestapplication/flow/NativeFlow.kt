@@ -1,8 +1,7 @@
-package com.example.kmmtestapplication
+package com.example.kmmtestapplication.flow
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
 
 /**
  * Represents an error in a way that the specific platform is able to handle
@@ -13,8 +12,6 @@ expect class NativeError
  * Converts a [Throwable] to a [NativeError].
  */
 internal expect fun Throwable.asNativeError(): NativeError
-
-class Flows<T>(val flow: MutableSharedFlow<T>, val nativeFlow: NativeFlow<T>)
 
 typealias NativeCancellable = () -> Any
 

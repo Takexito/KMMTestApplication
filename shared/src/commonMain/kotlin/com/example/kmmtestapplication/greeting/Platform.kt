@@ -1,4 +1,4 @@
-package com.example.kmmtestapplication
+package com.example.kmmtestapplication.greeting
 
 interface Platform {
     val name: String
