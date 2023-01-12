@@ -12,8 +12,13 @@ struct iOSApp: App {
     
     init(){
 //        testWithWrappers()
-        testNativeFlow()
+//        testNativeFlow()
 //        testComputed()
+    }
+    
+    func testLocalization(){
+        let locale = Locale.preferredLanguages.first
+        Locale.current
     }
     
     
