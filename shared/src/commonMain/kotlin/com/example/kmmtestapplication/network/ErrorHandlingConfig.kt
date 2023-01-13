@@ -51,7 +51,6 @@ private fun mapToFailureException(throwable: Throwable) = when (throwable) {
     is ApplicationException -> throwable
     is ContentConvertException -> DeserializationException(throwable)
     is SocketTimeoutException -> NoServerResponseException(throwable)
-    is Exception -> NoServerResponseException(throwable)
     is IOException -> (throwable.cause as? ApplicationException)
         ?: NoInternetException(throwable)
     else -> UnknownException(throwable, throwable.message ?: "Unknown")

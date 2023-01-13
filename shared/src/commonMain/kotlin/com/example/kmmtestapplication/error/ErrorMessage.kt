@@ -7,7 +7,7 @@ import com.example.kmmtestapplication.Build
  */
 val Exception.errorMessage: String
     get() = when (this) {
-        is ServerException, is DeserializationException -> "invalid responce"
+        is ServerException, is DeserializationException -> "invalid response"
 
         is NoServerResponseException -> "no server response"
 
