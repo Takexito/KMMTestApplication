@@ -1,6 +1,6 @@
 package com.example.kmmtestapplication.sample.data
 
-import com.example.kmmtestapplication.network.setErrorHandler
+import com.example.kmmtestapplication.network.setDefaultErrorHandler
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -11,7 +11,7 @@ import kotlinx.serialization.json.Json
 class MainRepository {
     suspend fun getPokemonByType(): PokemonsByTypeResponse {
         val client = HttpClient() {
-            setErrorHandler()
+            setDefaultErrorHandler()
             install(ContentNegotiation) {
                 json(Json {
                     ignoreUnknownKeys = true
