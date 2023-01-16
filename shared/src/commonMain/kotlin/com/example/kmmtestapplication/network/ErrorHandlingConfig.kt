@@ -12,21 +12,20 @@ import io.ktor.serialization.*
 import io.ktor.utils.io.errors.*
 
 fun <T : HttpClientEngineConfig> HttpClientConfig<T>.setDefaultErrorHandler(
-    successErrorHandler: SuccessErrorHandler? = null,
     debugTools: DebugTools? = null
 ) {
-    HttpResponseValidator {
-        validateResponse { response ->
-            if (response.status.isSuccess()) {
-                successErrorHandler?.handle(response)
-                return@validateResponse
-            }
-            val exception = mapToFailureException(response)
-            debugTools?.collectNetworkError(exception)
-            throw exception
-        }
+    expectSuccess = true
 
+    HttpResponseValidator {
         handleResponseExceptionWithRequest { cause, _ ->
+            val requestException = cause as? ClientRequestException
+
+            if (requestException != null) {
+                val requestAppException = mapToFailureException(requestException.response)
+                debugTools?.collectNetworkError(requestAppException)
+                throw requestAppException
+            }
+
             val exception = mapToFailureException(cause)
             debugTools?.collectNetworkError(exception)
             throw exception
