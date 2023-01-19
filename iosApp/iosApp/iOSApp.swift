@@ -1,56 +1,18 @@
 import SwiftUI
 import shared
 
+@available(iOS 15.0, *)
 @main
 struct iOSApp: App {
+    
     let vm = ViewModel(repository: Repository())
-	var body: some Scene {
-		WindowGroup {
-			ContentView()
-		}
-	}
+    let rootComponent: RootComponent = RootComponentKt.getRootComponent()
     
-    init(){
-//        testWithWrappers()
-//        testNativeFlow()
-//        testComputed()
-    }
-    
-    func testLocalization(){
-        let locale = Locale.preferredLanguages.first
-        Locale.current
-    }
-    
-    
-    func testNativeFlow(){
-        print("=== Output with Native Flow ===")
-        let cancel = vm.playerNativeFlow({ data in
-            print(data)
-        }, { err in
-            print(err)
-        })
-
-    }
-    
-    func testWithWrappers(){
-        print("=== Output with Wrappers ===")
-
-        let playerCancel = vm.playerOptionalFlowAdapter.subscribe(onEach: { data in
-            print(data.get())
-        }, onComplete: {
-            print("Complete")
-        }, onThrow: { err in
-            print(err)
-        })
-    }
-    
-    func testComputed(){
-        let test = TestComputedFlow()
-        let floatState = test.nativeFlow({ data in
-            print(data)
-        }, { err in
-            print(err)
-        })
+    var body: some Scene {
+        WindowGroup{
+            VStack {
+                DialogView(rootComponent: rootComponent)
+            }
+        }
     }
 }
-
