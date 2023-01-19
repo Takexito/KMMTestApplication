@@ -15,7 +15,7 @@ struct DialogView: View{
     
     init(rootComponent: RootComponent){
         self.rootComponent = rootComponent
-        dialogOverlay = ObservableValue(rootComponent.dialogChildOverlay)
+        dialogOverlay = ObservableValue(rootComponent.dialogControl.dialogOverlay)
     }
     
     private var rootComponent: RootComponent

@@ -72,7 +72,7 @@ class MainActivity : ComponentActivity() {
     private fun Dialog(
         rootComponent: RootComponent,
     ) {
-        val dialogOverlay by rootComponent.dialogChildOverlay.subscribeAsState()
+        val dialogOverlay by rootComponent.dialogControl.dialogOverlay.subscribeAsState()
 
         dialogOverlay.overlay?.instance?.dialog?.also { dialog ->
             Dialog(onDismissRequest = { dialog.onDismiss() }) {

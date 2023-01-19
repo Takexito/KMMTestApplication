@@ -1,4 +1,4 @@
-package com.example.kmmtestapplication.dialogs
+package com.example.kmmtestapplication.dialog
 
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.essenty.parcelable.Parcelable
