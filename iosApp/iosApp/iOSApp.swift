@@ -12,6 +12,7 @@ struct iOSApp: App {
         WindowGroup{
             VStack {
                 DialogView(rootComponent: rootComponent)
+                BottomSheetView(rootComponent: rootComponent)
             }
         }
     }

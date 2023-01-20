@@ -14,6 +14,7 @@
 		EC07F48E29793714005D8425 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F48D29793714005D8425 /* ObservableValue.swift */; };
 		EC07F49029793DF3005D8425 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F48F29793DF3005D8425 /* ViewExtension.swift */; };
 		EC07F49329793EA6005D8425 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F49229793EA6005D8425 /* DialogView.swift */; };
+		EC07F496297979DC005D8425 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F495297979DC005D8425 /* BottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		EC07F48D29793714005D8425 /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
 		EC07F48F29793DF3005D8425 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		EC07F49229793EA6005D8425 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		EC07F495297979DC005D8425 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				EC07F494297979C8005D8425 /* Bottom Sheet */,
 				EC07F49129793E9C005D8425 /* Dialog */,
 				EC07F48A2977EB96005D8425 /* State */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -113,6 +116,14 @@
 				EC07F49229793EA6005D8425 /* DialogView.swift */,
 			);
 			path = Dialog;
+			sourceTree = "<group>";
+		};
+		EC07F494297979C8005D8425 /* Bottom Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				EC07F495297979DC005D8425 /* BottomSheetView.swift */,
+			);
+			path = "Bottom Sheet";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				EC07F49029793DF3005D8425 /* ViewExtension.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				EC07F49329793EA6005D8425 /* DialogView.swift in Sources */,
+				EC07F496297979DC005D8425 /* BottomSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
