@@ -32,13 +32,22 @@ class DefaultRootComponent(
     override val bottomSheetControl =
         DefaultBottomSheetControl(componentContext, SHEET_CHILD_OVERLAY_KEY)
 
+    init {
+        scope.launch {
+            bottomSheetControl.sheetState.collect{
+                println("BottomSheet: state = $it")
+            }
+        }
+
+    }
+
     override fun onButtonClick() {
 //        showDialog()
         showBottomSheet()
     }
 
     private fun showBottomSheet() {
-        bottomSheetControl.show(BottomSheetControl.SheetConfig.DefaultBottomSheet("id"))
+        bottomSheetControl.show(BottomSheetControl.BottomSheetConfig.DefaultBottomBottomSheet)
     }
 
     private fun showDialog() {

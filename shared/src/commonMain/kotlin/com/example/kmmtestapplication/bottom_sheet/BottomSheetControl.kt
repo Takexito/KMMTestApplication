@@ -13,7 +13,7 @@ interface BottomSheetControl {
     val sheetState: StateFlow<State>
 
     fun changeState(state: State)
-    fun show(config: SheetConfig)
+    fun show(config: BottomSheetConfig)
     fun dismiss(onComplete: (isSuccess: Boolean) -> Unit = {})
 
     enum class State {
@@ -21,8 +21,8 @@ interface BottomSheetControl {
     }
 
     @Parcelize
-    sealed class SheetConfig : Parcelable {
-        data class DefaultBottomSheet(val id: String) : SheetConfig()
+    sealed class BottomSheetConfig : Parcelable {
+        object DefaultBottomBottomSheet : BottomSheetConfig()
     }
 }
 
@@ -39,7 +39,7 @@ class DefaultBottomSheetControl(
     override val sheetState: StateFlow<BottomSheetControl.State>
         get() = _sheetState
 
-    private val sheetNavigation = OverlayNavigation<BottomSheetControl.SheetConfig>()
+    private val sheetNavigation = OverlayNavigation<BottomSheetControl.BottomSheetConfig>()
 
     override val sheetOverlay: Value<ChildOverlay<*, BottomSheetComponent>> =
         componentContext.childOverlay(
@@ -57,7 +57,7 @@ class DefaultBottomSheetControl(
         _sheetState.tryEmit(state)
     }
 
-    override fun show(config: BottomSheetControl.SheetConfig) {
+    override fun show(config: BottomSheetControl.BottomSheetConfig) {
         sheetNavigation.activate(config)
         _sheetState.tryEmit(BottomSheetControl.State.Expanded)
     }
@@ -68,12 +68,12 @@ class DefaultBottomSheetControl(
     }
 
     private fun createSheetChild(
-        config: BottomSheetControl.SheetConfig,
+        config: BottomSheetControl.BottomSheetConfig,
         componentContext: ComponentContext
     ): BottomSheetComponent = when (config) {
-        is BottomSheetControl.SheetConfig.DefaultBottomSheet -> DefaultBottomSheetComponent(
+        is BottomSheetControl.BottomSheetConfig.DefaultBottomBottomSheet -> DefaultBottomSheetComponent(
             componentContext,
-            ::dismiss
+            this
         )
     }
 }

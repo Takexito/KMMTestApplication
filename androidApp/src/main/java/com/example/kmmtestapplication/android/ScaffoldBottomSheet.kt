@@ -14,7 +14,6 @@ import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import com.arkivanov.decompose.router.overlay.ChildOverlay
 import com.example.kmmtestapplication.bottom_sheet.BottomSheetComponent
 import com.example.kmmtestapplication.bottom_sheet.DefaultBottomSheetComponent
-import com.example.kmmtestapplication.sample.data.PokemonWrapperResponse
 import com.example.kmmtestapplication.sample.presentation.RootComponent
 import kotlinx.coroutines.launch
 
@@ -29,7 +28,7 @@ fun ScaffoldBottomSheet(
         rememberBottomSheetScaffoldState(bottomSheetState = BottomSheetState(BottomSheetValue.Collapsed))
     val bottomSheetOverlay by rootComponent.bottomSheetControl.sheetOverlay.subscribeAsState()
 
-    state.bottomSheetState.handleBottomSheetHiding(bottomSheetOverlay = bottomSheetOverlay)
+    state.bottomSheetState.handleBottomSheetState(bottomSheetOverlay = bottomSheetOverlay)
 
     BottomSheetScaffold(
         sheetPeekHeight = 0.dp,
@@ -66,7 +65,7 @@ fun ScaffoldBottomSheet(
 @SuppressLint("ComposableNaming")
 @Composable
 @OptIn(ExperimentalMaterialApi::class)
-private fun BottomSheetState.handleBottomSheetHiding(
+private fun BottomSheetState.handleBottomSheetState(
     bottomSheetOverlay: ChildOverlay<*, BottomSheetComponent>
 ) {
     LaunchedEffect(currentValue) {

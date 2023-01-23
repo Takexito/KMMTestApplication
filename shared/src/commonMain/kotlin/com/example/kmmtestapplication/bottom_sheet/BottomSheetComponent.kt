@@ -8,9 +8,17 @@ interface BottomSheetComponent {
 
 class DefaultBottomSheetComponent(
     private val componentContext: ComponentContext,
-    private val onDismiss: (onComplete: (isSuccess: Boolean) -> Unit) -> Unit
+    private val bottomSheetControl: BottomSheetControl
 ) : BottomSheetComponent, ComponentContext by componentContext {
     override fun dismiss(onComplete: (isSuccess: Boolean) -> Unit) {
-        onDismiss(onComplete)
+        bottomSheetControl.dismiss(onComplete)
+    }
+
+    fun expandBottomSheet(){
+        bottomSheetControl.changeState(BottomSheetControl.State.Expanded)
+    }
+
+    fun collapseBottomSheet() {
+        bottomSheetControl.changeState(BottomSheetControl.State.Collapsed)
     }
 }

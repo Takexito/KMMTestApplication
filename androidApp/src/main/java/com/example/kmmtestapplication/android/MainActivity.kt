@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
     private val handler = ErrorHandler(messageService)
     private val pokemonState = mutableStateOf<List<PokemonWrapperResponse>>(emptyList())
     private val mainRepository = MainRepository()
-    private val rootComponent: RootComponent = DefaultRootComponent(defaultComponentContext())
+    private val rootComponent: RootComponent by lazy { DefaultRootComponent(defaultComponentContext()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Dialog(rootComponent)
+                    DefaultDialog(rootComponent)
                     BottomSheet(
                         messageService = messageService,
                         rootComponent = rootComponent,

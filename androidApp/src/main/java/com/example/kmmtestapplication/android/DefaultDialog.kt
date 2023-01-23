@@ -8,17 +8,18 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.window.Dialog
 import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import com.example.kmmtestapplication.sample.presentation.RootComponent
 
 @Composable
-fun Dialog(
+fun DefaultDialog(
     rootComponent: RootComponent,
 ) {
     val dialogOverlay by rootComponent.dialogControl.dialogOverlay.subscribeAsState()
 
     dialogOverlay.overlay?.instance?.dialog?.also { dialog ->
-        androidx.compose.ui.window.Dialog(onDismissRequest = { dialog.onDismiss() }) {
+        Dialog(onDismissRequest = { dialog.onDismiss() }) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceAround

@@ -36,9 +36,9 @@ fun BottomSheet(
     rootComponent: RootComponent,
     pokemonState: MutableState<List<PokemonWrapperResponse>>
 ) {
-    ScaffoldBottomSheet(rootComponent) {
-        Content(messageService, rootComponent, pokemonState)
-    }
+//    ScaffoldBottomSheet(rootComponent) {
+//        Content(messageService, rootComponent, pokemonState)
+//    }
     ModalBottomSheet(rootComponent) {
         Content(messageService, rootComponent, pokemonState)
     }
