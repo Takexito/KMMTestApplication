@@ -11,9 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		EC07F4A1297EB428005D8425 /* NullableObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F49E297EB428005D8425 /* NullableObservableState.swift */; };
-		EC07F4A2297EB428005D8425 /* StateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F49F297EB428005D8425 /* StateTest.swift */; };
-		EC07F4A3297EB428005D8425 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F4A0297EB428005D8425 /* ObservableState.swift */; };
+		EC07F4A1297EB428005D8425 /* ObservableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07F49E297EB428005D8425 /* ObservableState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,9 +34,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC07F49E297EB428005D8425 /* NullableObservableState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullableObservableState.swift; sourceTree = "<group>"; };
-		EC07F49F297EB428005D8425 /* StateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTest.swift; sourceTree = "<group>"; };
-		EC07F4A0297EB428005D8425 /* ObservableState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableState.swift; sourceTree = "<group>"; };
+		EC07F49E297EB428005D8425 /* ObservableState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +96,7 @@
 		EC07F4A6297EB4FC005D8425 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				EC07F49E297EB428005D8425 /* NullableObservableState.swift */,
-				EC07F4A0297EB428005D8425 /* ObservableState.swift */,
-				EC07F49F297EB428005D8425 /* StateTest.swift */,
+				EC07F49E297EB428005D8425 /* ObservableState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -199,11 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC07F4A1297EB428005D8425 /* NullableObservableState.swift in Sources */,
+				EC07F4A1297EB428005D8425 /* ObservableState.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
-				EC07F4A3297EB428005D8425 /* ObservableState.swift in Sources */,
-				EC07F4A2297EB428005D8425 /* StateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

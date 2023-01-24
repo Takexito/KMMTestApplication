@@ -1,5 +1,5 @@
 //
-//  ObservableState.swift
+//  NullableObservableState.swift
 //  iosApp
 //
 //  Created by Andrey on 18.01.2023.
@@ -9,30 +9,37 @@
 import shared
 
 
-public class ObservableState<T: AnyObject> : ObservableObject {
+public class ObservableState<T: NSObject>: ObservableObject {
     
     private let observableState: FlowWrapper<T>
     
     @Published
     var value: T
     
+    @Published
+    var optionalValue: T? = nil
+    
     private var cancelable: Cancelable? = nil
     
-    init(_ value: Kotlinx_coroutines_coreMutableStateFlow) {
-        self.observableState = FlowWrapper<T>(flow: value)
-         self.value = value.value as! T
+    
+    init(_ state: CStateFlow<T>, _ defaultValue: T = NSObject()) {
+        self.observableState = FlowWrapper<T>(flow: state)
+        self.value = defaultValue
+        if(state.type.isMarkedNullable) {
+            optionalValue = state.value
+        } else {
+            self.value = state.value!
+        }
+        
          cancelable = observableState.bind(consumer: { value in
-             self.value = value!
+             if(state.type.isMarkedNullable) {
+                 self.optionalValue = value
+             } else {
+                 self.value = value!
+             }
          })
     }
     
-    init(initialValue: T, flow: Kotlinx_coroutines_coreFlow) {
-        self.observableState = FlowWrapper<T>(flow: flow)
-        self.value = initialValue
-        cancelable = observableState.bind(consumer: { value in
-            self.value = value!
-        })
-    }
         
     deinit {
         self.cancelable?.cancel()
