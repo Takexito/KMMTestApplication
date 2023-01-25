@@ -7,17 +7,18 @@ struct iOSApp: App {
     let vm = ViewModel()
     
     @ObservedObject
-    private var state: ObservableState<KotlinInt>
+    private var state: ObservableState<Optional<KotlinInt>>
     
     
 	var body: some Scene {
 		WindowGroup {
-            Text("\(state.optionalValue ?? -1)")
+            let id = state.value
+            Text("\(Int(id.getForce() ?? -1) + 5)")
 		}
 	}
     
     init(){
-        state = ObservableState(vm.cStateFlow())
+        state = ObservableState(vm.cStateFlow)
     }
 }
 

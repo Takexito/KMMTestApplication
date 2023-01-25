@@ -11,7 +11,7 @@ interface Cancelable {
     fun cancel()
 }
 
-class FlowWrapper<T>(
+class FlowWrapper<T : Any>(
     private val flow: Flow<T>
 ) : Flow<T> by flow {
 

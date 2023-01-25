@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.coroutineScope
 import com.example.kmmtestapplication.error.ErrorHandler
 import com.example.kmmtestapplication.error.safeLaunch
-import com.example.kmmtestapplication.flow.value
 import com.example.kmmtestapplication.flow_test.ViewModel
 import com.example.kmmtestapplication.message.data.MessageServiceImpl
 import com.example.kmmtestapplication.sample.data.MainRepository
@@ -49,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val messageState = messageService.messageFlow.collectAsState(initial = null)
                     Column(Modifier.fillMaxSize()) {
-                        val state = vm.cStateFlow().collectAsState()
+                        val state = vm.cStateFlow.collectAsState()
                         Spacer(modifier = Modifier.height(16.dp))
                         GreetingView(state.value.toString())
                         Spacer(modifier = Modifier.height(16.dp))

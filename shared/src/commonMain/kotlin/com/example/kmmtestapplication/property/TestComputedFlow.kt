@@ -1,7 +1,5 @@
 package com.example.kmmtestapplication.property
 
-import com.example.kmmtestapplication.flow.asNativeFlow
-import com.example.kmmtestapplication.property.computed
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -17,7 +15,6 @@ class TestComputedFlow {
         string + float
     }
 
-    val nativeFlow = stateFlow.asNativeFlow()
 
     init {
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
