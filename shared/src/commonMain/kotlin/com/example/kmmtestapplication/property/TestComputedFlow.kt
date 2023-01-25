@@ -8,8 +8,8 @@ class TestComputedFlow {
     private val stateStringFlow: MutableStateFlow<String?> = MutableStateFlow("dfsdfd")
 
     val stateFlow = computed(
-        ::stateStringFlow,
-        ::stateFloatFlow,
+        stateStringFlow,
+        stateFloatFlow,
     ) { string, float ->
         if (string == null || float == null) return@computed null
         string + float
