@@ -2,7 +2,7 @@ package com.example.kmmtestapplication.flow_test
 
 import com.example.kmmtestapplication.flow.CMutableStateFlow
 import com.example.kmmtestapplication.flow.Optional
-import com.example.kmmtestapplication.property.scope
+import com.example.kmmtestapplication.flow.scope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

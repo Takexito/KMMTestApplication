@@ -1,4 +1,4 @@
-package com.example.kmmtestapplication.property
+package com.example.kmmtestapplication.flow
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

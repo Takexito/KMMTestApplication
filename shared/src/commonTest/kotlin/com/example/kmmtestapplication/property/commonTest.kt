@@ -1,5 +1,6 @@
 package com.example.kmmtestapplication.property
 
+import com.example.kmmtestapplication.flow.computed
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlin.test.AfterTest
